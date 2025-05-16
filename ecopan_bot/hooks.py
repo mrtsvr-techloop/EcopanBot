@@ -2,9 +2,9 @@ from . import __version__ as app_version
 
 app_name = "ecopan_bot"
 app_title = "ecopanBot"
-app_publisher = "Hussain Nagaria"
+app_publisher = "Techloop"
 app_description = "ChatGPT in the Desk, powered by React, LangChain & OpenAI API"
-app_email = "hussain@frappe.io"
+app_email = "Techloop"
 app_license = "AGPL-3.0"
 
 # Includes in <head>
