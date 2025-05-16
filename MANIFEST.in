@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include ecopan_bot *.css
+recursive-include ecopan_bot *.csv
+recursive-include ecopan_bot *.html
+recursive-include ecopan_bot *.ico
+recursive-include ecopan_bot *.js
+recursive-include ecopan_bot *.json
+recursive-include ecopan_bot *.md
+recursive-include ecopan_bot *.png
+recursive-include ecopan_bot *.py
+recursive-include ecopan_bot *.svg
+recursive-include ecopan_bot *.txt
+recursive-exclude ecopan_bot *.pyc
