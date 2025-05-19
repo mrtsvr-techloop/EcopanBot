@@ -1,9 +1,9 @@
 const path = require('path');
 module.exports = {
-  entry: './public/js/index.jsx',          // tuo punto di ingresso React
+  entry: './public/js/App.jsx',          // tuo punto di ingresso React
   output: {
     path: path.resolve(__dirname, 'public/js'),
-    filename: 'frontend.js'               // bundle che verrà symlinkato
+    filename: 'chatbot.js'               // bundle che verrà symlinkato
   },
   module: {
     rules: [{
