@@ -1,13 +1,6 @@
-{% extends "templates/web.html" %}
-
-{% block page_content %}
 <div id="ecopanbot-react-root" style="height: 80vh; display: flex; flex-direction: column;">
     <p>Loading Chat...</p>
 </div>
-{% endblock %}
-
-{% block script %}
-{{ super() }}
 <script type="text/javascript" src="/assets/ecopan_bot/js/ecopanbot_ui.bundle.js"></script>
 <script>
 frappe.require("/assets/ecopan_bot/js/ecopanbot_ui.bundle.js").then(() => {
@@ -20,12 +13,3 @@ frappe.require("/assets/ecopan_bot/js/ecopanbot_ui.bundle.js").then(() => {
     }
     });
 </script>
-{% endblock %}
-
-{% block style %}
-{{ super() }}
-<style>
-    /* Eventuali stili aggiuntivi specifici per questa pagina */
-    /* Assicurati che l'altezza del contenitore funzioni bene con ChakraProvider */
-</style>
-{% endblock %}
