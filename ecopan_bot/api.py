@@ -40,7 +40,7 @@ class RedisChatStore:
         messages.append({"role": role, "content": content})
         self.save_messages(messages)
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_chatbot_response(session_id: str, prompt_message: str) -> str:
     """Process a user message and get a response from the chatbot"""
     # Throw if no key in site_config

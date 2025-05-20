@@ -1,0 +1,15 @@
+{
+    "docstatus": 0,
+    "doctype": "Web Page",
+    "name": "public-chat",
+    "owner": "Administrator",
+    "idx": 0,
+    "title": "Public Chat with EcopanBot",
+    "module": "Frappe ChatGPT Integration",
+    "published": 1,
+    "public_read": 1,
+    "route": "development.localhost/public-chat",
+    "content_type": "HTML",
+    "show_title": 1,
+    "dynamic_route": 0
+}
