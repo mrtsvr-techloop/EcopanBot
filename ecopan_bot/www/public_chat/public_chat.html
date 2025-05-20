@@ -13,7 +13,7 @@
 frappe.require("/assets/ecopan_bot/js/ecopanbot_ui.bundle.js").then(() => {
     if (ecopanbot && ecopanbot.ui && ecopanbot.ui.ecopanBotUI) {
         new ecopanbot.ui.ecopanBotUI({
-            wrapper: $("#ecopanbot-react-root").get({ page_name: "public-chat" }),
+            wrapper: $("#ecopanbot-react-root").get({ page_name: "public_chat" }),
         });
     } else {
         console.error("ecopanBotUI not found after loading bundle.");
