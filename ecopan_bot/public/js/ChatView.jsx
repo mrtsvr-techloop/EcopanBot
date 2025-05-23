@@ -16,10 +16,8 @@ import Message from "./components/message/Message";
 
 const ChatView = ({ sessionID }) => {
   // from Frappe!
-  const isGuestUser = frappe.session.user === "Guest"; // Controlla se l'utente è Guest
-
-  const userImageURL = !isGuestUser ? frappe.user.image() : null; // o un URL di un'immagine generica
-  const userFullname = !isGuestUser ? frappe.user.full_name() : "Guest";
+  const userImageURL = frappe.user.image();
+  const userFullname = frappe.user.full_name();
 
   const toast = useToast();
   const [promptMessage, setPromptMessage] = useState("");
