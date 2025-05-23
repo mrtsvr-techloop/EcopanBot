@@ -1,0 +1,53 @@
+{% extends "templates/web.html" %}
+{% block title %}ecopanBot - Assistente Virtuale{% endblock %}
+
+{% block head_include %}
+<!-- React -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+{% endblock %}
+
+{% block page_content %}
+<div id="ecopanbot-public-container" style="height: 80vh; padding: 20px;"></div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+    frappe.ready(function() {
+        console.log("Inizializzazione ecopanBot React...");
+        
+        // Carica il bundle React compilato
+        var script = document.createElement('script');
+        script.src = '/assets/ecopan_bot/js/ecopanbot_public.bundle.js';
+        
+        script.onload = function() {
+            console.log("Bundle React caricato con successo");
+            console.log("Namespace disponibili:", Object.keys(window.ecopanbot || {}));
+            
+            try {
+                if (window.ecopanbot && window.ecopanbot.ecopanbot_public) {
+                    new window.ecopanbot.ecopanbot_public({
+                        wrapper: document.getElementById('ecopanbot-public-container')
+                    });
+                    console.log("React Chatbot inizializzato con successo");
+                } else if (window.ecopanbot && window.ecopanbot.public && window.ecopanbot.public.PublicChatUI) {
+                    new window.ecopanbot.public.PublicChatUI({
+                        wrapper: document.getElementById('ecopanbot-public-container')
+                    });
+                    console.log("React Chatbot inizializzato con successo (fallback)");
+                } else {
+                    console.error("Namespace ecopanbot non trovato. Disponibili:", window.ecopanbot);
+                }
+            } catch (error) {
+                console.error("Errore nell'inizializzazione del React Chatbot:", error);
+            }
+        };
+        
+        script.onerror = function() {
+            console.error("Errore nel caricamento del bundle React");
+        };
+        
+        document.head.appendChild(script);
+    });
+</script>
+{% endblock %}
